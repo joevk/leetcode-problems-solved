@@ -8,26 +8,19 @@
 from typing import List
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
-        l=1
-        for r in range(1,len(nums)):
-            if nums[r]!=nums[r-1]:
-                nums[l]=nums[r]
-                l=l+1
-                         
-            else:
-
-                continue
-               
-
-
                 
-      
-                   
-        print(nums)           
-        return l
-    
+        
+                k=0
+                for i in range(len(nums)):
+                        if i==len(nums)-1 or nums[i]!=nums[i+1]:
+                                nums[k]=nums[i]
+     
+                                k+=1
+                    
+                return k
+
 sol=Solution()
-print(sol.removeDuplicates([0,0,1,2,2,3]))
+print(sol.removeDuplicates([1,1,1,2,7,8,8]))
 
         
 # @lc code=end
